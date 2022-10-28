@@ -1,0 +1,20 @@
+.language__select {
+  .ant-select-selector {
+    background-color: transparent !important;
+    color: #fff;
+    border: 1px solid #c8c8db !important;
+    border-radius: 4px;
+
+    .ant-select-selection-item {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.015em;
+    }
+  }
+
+  .ant-select-arrow {
+    color: #fff;
+  }
+}

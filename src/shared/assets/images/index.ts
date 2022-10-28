@@ -1,0 +1,11 @@
+export const logo = require('./logo.png');
+export const imgAvatar = require('./avatar.jpg');
+export const imgLogo = require('./logo-login.png');
+export const imgVietnam = require('./vietnam.png');
+export const iconMenu1 = require('./menu-icon1.png');
+export const iconMenu2 = require('./menu-icon2.png');
+export const iconMenu3 = require('./menu-icon3.png');
+export const iconMenu4 = require('./menu-icon4.png');
+export const iconMenu5 = require('./menu-icon5.png');
+export const iconMenu6 = require('./menu-icon6.png');
+export const iconMenu7 = require('./menu-icon7.png');

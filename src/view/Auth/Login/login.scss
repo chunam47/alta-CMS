@@ -1,0 +1,21 @@
+.main-login {
+  .main-content {
+    display: inline-block;
+    // width: 35%;
+    margin: 0 auto;
+    padding: 0 10rem;
+
+    .img {
+      margin-bottom: 40px;
+    }
+
+    .ant-input-password {
+      border: 1px solid #727288;
+    }
+
+    .remember__login {
+      display: flex;
+      color: #fff;
+    }
+  }
+}
