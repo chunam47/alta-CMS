@@ -9,7 +9,7 @@ import { UnorderedListOutlined, TableOutlined } from '@ant-design/icons';
 import TableComponent from '@shared/components/TableComponent';
 import useTable from '@shared/components/TableComponent/hook';
 
-import ListenComponent from '@shared/components/InformationIcon';
+import ListenComponent from '@shared/components/ListenComponent';
 import { iconMenuRightAdd } from '../../../../shared/assets/images';
 import { Link } from 'react-router-dom';
 // import ApprovalManagementComponent from '../../../../shared/components/ApprovalManagementComponent';
@@ -54,7 +54,9 @@ const Playlist = () => {
     {
       render: () => (
         <>
-          <ListenComponent />
+          <Link to="/playlist/detail-playlist" className="icon-edit">
+            Chi tiết
+          </Link>
         </>
       ),
     },

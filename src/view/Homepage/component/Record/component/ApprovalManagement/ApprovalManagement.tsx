@@ -13,8 +13,8 @@ import SelectAndLabelComponent, {
 import TableComponent from '@shared/components/TableComponent';
 import useTable from '@shared/components/TableComponent/hook';
 
-import { iconMenuRightDelete } from '../../../../../../shared/assets/images';
-import ListenComponent from '@shared/components/InformationIcon';
+import { iconMenuRightComfirm, iconMenuRightDelete } from '../../../../../../shared/assets/images';
+import ListenComponent from '@shared/components/ListenComponent';
 import SearchComponent from '../../../../../../shared/components/SearchComponent';
 import { DeleteConfirm } from '../../../../../../shared/components/ConfirmDelete';
 import './ApprovalManagement.scss';
@@ -76,12 +76,11 @@ const ApprovalManagement = () => {
   const arrayAction: IArrayAction[] = [
     {
       imgIcon: iconMenuRightDelete,
-      name: 'common.delete',
-      title: 'Xóa',
-      disable: selectedRowKeys?.length === 0,
+      name: 'Từ chối',
+      title: 'Từ chối',
       handleAction: () => {
         DeleteConfirm({
-          content: 'Xóa',
+          content: 'Hủy bỏ',
           handleOk: () => {
             // call Api Delete here
             handleRefresh();
@@ -89,6 +88,12 @@ const ApprovalManagement = () => {
           handleCancel: () => {},
         });
       },
+    },
+    {
+      imgIcon: iconMenuRightComfirm,
+      title: 'Phê duyệt',
+      name: 'Phê duyệt',
+      handleAction: () => {},
     },
   ];
   const dataString: ISelect[] = [

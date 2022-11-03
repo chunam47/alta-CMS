@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "PlaylistName": "Top USUK 2021",
+    "playlistDate": "22/05/2021 - 30/05/2021",
+    "startEnd": ["06:00:00 - 08:00:00", "13:00:00 - 15:00:00"],
+    "playbackCycle": "Thứ 3 | Thứ 6",
+    "device": "Thiết bị 1 | Thiết bị 2 | Thiết bị 3 | Thiết bị 4 | Thiết bị 5"
+  },
+  {
+    "id": "2",
+    "PlaylistName": "Love songs",
+    "playlistDate": "22/05/2021 - 30/05/2021",
+    "startEnd": ["06:00:00 - 08:00:00"],
+    "playbackCycle": "Thứ 5",
+    "device": "Thiết bị 1 | Thiết bị 2 | Thiết bị 3 | Thiết bị 4 | Thiết bị 5"
+  },
+  {
+    "id": "3",
+    "PlaylistName": "Loving You",
+    "playlistDate": "22/05/2021 - 30/05/2021",
+    "startEnd": ["14:00:00 - 16:00:00"],
+    "playbackCycle": "Thứ 7",
+    "device": "Thiết bị 1 | Thiết bị 2 | Thiết bị 3 | Thiết bị 4 | Thiết bị 5"
+  }
+]

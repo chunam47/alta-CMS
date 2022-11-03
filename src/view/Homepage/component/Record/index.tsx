@@ -16,7 +16,7 @@ import TableComponent from '@shared/components/TableComponent';
 import useTable from '@shared/components/TableComponent/hook';
 import { useAltaIntl } from '@shared/hook/useTranslate';
 
-import ListenComponent from '@shared/components/InformationIcon';
+import ListenComponent from '@shared/components/ListenComponent';
 import { iconMenuRight1 } from '../../../../shared/assets/images';
 import EditComponent from '../../../../shared/components/EditComponent';
 import { Link } from 'react-router-dom';
@@ -89,7 +89,7 @@ const Record = () => {
   const arrayAction: IArrayAction[] = [
     {
       imgIcon: iconMenuRight1,
-      name: 'common.edit',
+      name: 'Quản lý phê duyệt',
       title: 'Quản lý phê duyệt',
     },
   ];
@@ -132,10 +132,10 @@ const Record = () => {
           </div>
           <div className="d-flex justify-content-between align-items-center">
             <div className="filter">
-              {arraySelectFilter.map(item => (
+              {arraySelectFilter.map((item, index) => (
                 <SelectAndLabelComponent
                   onChange={onChangeSelectStatus(item.name)}
-                  key={item.name}
+                  key={index}
                   className="margin-select"
                   dataString={item.dataString}
                   textLabel={item.textLabel}

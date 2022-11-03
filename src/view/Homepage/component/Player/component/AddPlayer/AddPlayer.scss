@@ -1,0 +1,128 @@
+.add-player {
+  padding: 0 40px;
+
+  h2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.002em;
+    color: #fff9f4;
+  }
+
+  .content-left {
+    margin-right: 24px;
+
+    label {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      letter-spacing: -0.002em;
+      color: #aeaeae;
+    }
+
+    input,
+    textarea {
+      background-color: #2b2b3f;
+      padding: 11px 24px 13px 16px;
+      border-radius: 6px;
+      border: 1px solid #727288 !important;
+      color: #ffffff;
+    }
+
+    .ant-row {
+      display: block;
+    }
+    &__info {
+      background: rgba(47, 47, 65, 0.7);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 24px;
+
+      .ant-picker {
+        background: transparent;
+        width: 100%;
+        box-shadow: none;
+        background: transparent;
+        border: 1px solid #ff7506;
+
+        input {
+          padding: 0;
+          border: none !important;
+        }
+      }
+
+      &--mb4 {
+        margin-bottom: 4px;
+      }
+    }
+
+    &__list {
+      background: rgba(47, 47, 65, 0.7);
+      border-radius: 16px;
+      padding: 16px;
+
+      h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.002em;
+        color: #ffac69;
+      }
+
+      .playlist {
+        overflow: auto;
+        height: 468px;
+
+        .new-playlist {
+          border-top: 1px solid #c8c8db;
+          padding-top: 12px;
+        }
+
+        .list-item {
+          padding: 8px 16px;
+          background: #33334d;
+          border-radius: 8px;
+          margin-bottom: 12px;
+
+          .list-duration {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 20px;
+              letter-spacing: -0.002em;
+              color: #ffffff;
+              margin-bottom: 0;
+            }
+
+            span {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 20px;
+              letter-spacing: 0.015em;
+              color: #aeaeae;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content-right {
+    .ant-table-pagination.ant-pagination {
+      display: none;
+    }
+
+    .ant-table-placeholder {
+      .ant-table-cell {
+        background: transparent;
+      }
+    }
+  }
+}

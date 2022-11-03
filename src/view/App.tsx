@@ -21,8 +21,11 @@ import Updateinfo from './Homepage/component/Record/component/UpdateInfo';
 import ApprovalManagement from './Homepage/component/Record/component/ApprovalManagement';
 import Playlist from './Homepage/component/Playlist';
 import AddPlaylist from './Homepage/component/Playlist/component/AddPlaylist';
-import Player from './Homepage/component/Player';
 import PrivatePage from '../routers/component/PrivatePage';
+import Player from './Homepage/component/Player';
+import DesPlayer from './Homepage/component/Player/component/DetailPlayer/DetailPlayer';
+import AddPlayer from './Homepage/component/Player/component/AddPlayer/AddPlayer';
+import DetailPlaylist from './Homepage/component/Playlist/component/DetailPlaylist';
 
 const MainView = memo(({ statusLogin }: { statusLogin: boolean }) => {
   return (
@@ -61,14 +64,21 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Homepage />}>
             <Route path="/profile" element={<Profile />} />
+
             <Route path="/record" element={<Record />} />
             <Route path="/record/recordId" element={<Updateinfo />} />
             <Route path="/record/approval-management" element={<ApprovalManagement />} />
+
             <Route path="/playlist" element={<Playlist />} />
+            <Route path="/playlist/detail-playlist" element={<DetailPlaylist />} />
             <Route path="/playlist/add-playlist" element={<AddPlaylist />} />
-            <Route path="/playlist/player" element={<Player />} />
+
+            <Route path="/player" element={<Player />} />
+            <Route path="/player/detail-player" element={<DesPlayer />} />
+            <Route path="/player/add-player" element={<AddPlayer />} />
           </Route>
         </Routes>
+        {/* <Homepage /> */}
       </ConfigProvider>
     </IntlProvider>
   );

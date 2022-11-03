@@ -64,7 +64,7 @@ const RenderItem = React.memo(({ item }: { item: IArrayAction }) => {
     if (!item.disable && item.handleAction) {
       item.handleAction(item.context);
     }
-    e.stopPropagation();
+    // e.stopPropagation();
   };
   return (
     <Tooltip placement="left" title={title}>
