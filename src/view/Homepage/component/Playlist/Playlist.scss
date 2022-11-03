@@ -1,0 +1,60 @@
+.record {
+  padding-left: 59px;
+  .title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.002em;
+    color: #ffffff;
+  }
+
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0;
+
+    .label-select {
+      display: flex;
+      align-items: center;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.002em;
+      color: #ffffff;
+
+      .select-custom {
+        margin-left: 16px;
+
+        .ant-select-selector {
+          background: #1e1e2e;
+          border: 1px solid #ff7506;
+          border-radius: 8px;
+          padding: 12px 12px 12px 16px;
+          height: 40px;
+
+          .ant-select-selection-item {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: -0.002em;
+            color: #f5f5ff;
+            margin-right: 38px;
+          }
+        }
+      }
+    }
+  }
+
+  svg.active {
+    color: #ff7506;
+  }
+}
+
+.right {
+  top: 18rem;
+}

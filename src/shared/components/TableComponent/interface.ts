@@ -9,7 +9,6 @@ export interface IBEColumnsType<RecordType = any> extends ColumnsType<RecordType
   permissionCode?: string;
   dataIndex?: [keyof RecordType];
 }
-
 export interface IBEPaginationTable<RecordType = any> extends TableProps<RecordType> {
   apiServices?: (...params: any) => Promise<{ data: Array<RecordType>; info: PaginationEntity }>;
   columns?: ColumnsType<RecordType>;

@@ -8,7 +8,6 @@ import { CheckPermissionFunc } from '@hoc/CheckPermission';
 import { UilFileCheck, UilFileImport, UilShareAlt, UilTrash } from '@iconscout/react-unicons';
 import { RootState } from '@modules';
 import { useAltaIntl } from '@shared/hook/useTranslate';
-
 const listIconType = {
   add: <Icon.Plus size="24" className="icon-feather" />,
   edit: <Icon.Edit size="24" className="icon-feather" />,
@@ -41,6 +40,8 @@ export interface IArrayAction {
   iconType?: keyof typeof listIconType;
   imgIcon?: any;
   context?: any;
+  title?: string;
+  render?: any;
 }
 
 const RenderIcon = (item: IArrayAction) => {
@@ -51,7 +52,7 @@ const RenderIcon = (item: IArrayAction) => {
   } else if (item.iconType) {
     return listIconType[item.iconType];
   } else if (item?.imgIcon) {
-    return <img alt="img icon" src={item?.imgIcon} style={{ width: '25px' }} />;
+    return <img alt="img-icon" src={item?.imgIcon} style={{ width: '52px' }} />;
   }
   return <></>;
 };
@@ -69,6 +70,7 @@ const RenderItem = React.memo(({ item }: { item: IArrayAction }) => {
     <Tooltip placement="left" title={title}>
       <span className={`item__icon ${item.disable ? 'no-click' : ''}`} onClick={onClick}>
         <RenderIcon {...item} />
+        <p>{item.title}</p>
       </span>
     </Tooltip>
   );

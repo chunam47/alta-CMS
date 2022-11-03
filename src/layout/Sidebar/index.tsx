@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { UilAngleRight } from '@iconscout/react-unicons';
 import { IRouter } from '@routers/interface';

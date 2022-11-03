@@ -75,14 +75,8 @@ body {
   font-weight: normal;
   font-family: 'Montserrat';
   color: $color-main-text;
-  background-color: $color-background;
+  background-color: #1e1e2e;
   line-height: normal;
-}
-
-div#root {
-  height: 100%;
-  overflow: hidden;
-  width: 100vw;
 }
 
 a,
@@ -110,6 +104,8 @@ a:hover {
 }
 .ant-row {
   row-gap: 1rem !important;
+  flex-flow: nowrap;
+  height: 100%;
 }
 .pointer {
   cursor: pointer;

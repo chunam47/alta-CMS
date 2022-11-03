@@ -3,22 +3,26 @@ import 'antd/dist/antd.css';
 import '@styles/styles.scss';
 
 import { ConfigProvider } from 'antd';
-import lodash from 'lodash';
-import React, { memo, Suspense, useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, Suspense, memo } from 'react';
+
 import { IntlProvider } from 'react-intl';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import locale from '@locale/index';
+import lodash from 'lodash';
 import { TokenSelector } from '@modules/authentication/profileStore';
 import { LanguageSelector } from '@modules/setting/settingStore';
-import PrivatePage from '@routers/component/PrivatePage';
-
-import PublicPage from '../routers/component/PublicPage';
-import UpdatePasswordForm from './Auth/ResetPassword/components/UpdatePasswordForm';
-import UserProfile from './Auth/Profile';
 import Homepage from './Homepage';
-import Navbar from '../layout/navBar';
+import PublicPage from '../routers/component/PublicPage';
+import Profile from './Auth/Profile';
+import Record from './Homepage/component/Record';
+import Updateinfo from './Homepage/component/Record/component/UpdateInfo';
+import ApprovalManagement from './Homepage/component/Record/component/ApprovalManagement';
+import Playlist from './Homepage/component/Playlist';
+import AddPlaylist from './Homepage/component/Playlist/component/AddPlaylist';
+import Player from './Homepage/component/Player';
+import PrivatePage from '../routers/component/PrivatePage';
 
 const MainView = memo(({ statusLogin }: { statusLogin: boolean }) => {
   return (
@@ -53,10 +57,18 @@ const App: React.FC = () => {
   return (
     <IntlProvider locale={language} messages={memoLangData}>
       <ConfigProvider locale={memoLangData}>
-        {/* <MainView statusLogin={!lodash.isEmpty(token)} />
-        <UpdatePasswordForm recoveryToken={''} /> */}
-        <UserProfile />
-        {/* <Navbar /> */}
+        <MainView statusLogin={!lodash.isEmpty(token)} />
+        <Routes>
+          <Route path="/" element={<Homepage />}>
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/record" element={<Record />} />
+            <Route path="/record/recordId" element={<Updateinfo />} />
+            <Route path="/record/approval-management" element={<ApprovalManagement />} />
+            <Route path="/playlist" element={<Playlist />} />
+            <Route path="/playlist/add-playlist" element={<AddPlaylist />} />
+            <Route path="/playlist/player" element={<Player />} />
+          </Route>
+        </Routes>
       </ConfigProvider>
     </IntlProvider>
   );

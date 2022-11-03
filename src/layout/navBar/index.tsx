@@ -1,9 +1,6 @@
 import React from 'react';
 
 import './navBar.scss';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
-import type { MenuProps } from 'antd';
-import { Menu } from 'antd';
 import {
   iconMenu1,
   iconMenu2,
@@ -14,50 +11,74 @@ import {
   iconMenu7,
   imgLogo,
 } from '../../shared/assets/images';
+import { NavLink } from 'react-router-dom';
 
-type MenuItem = Required<MenuProps>['items'][number];
-
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  icon?: React.ReactNode,
-  children?: MenuItem[],
-  type?: ':',
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  } as MenuItem;
-}
-
-const items: MenuProps['items'] = [
-  getItem('Kho bản ghi', 'sub1', <img src={iconMenu1} alt="" />),
-
-  getItem('Playlist', 'sub2', <img src={iconMenu2} alt="" />),
-
-  getItem('Lập lịch phát', 'sub3', <img src={iconMenu3} alt="" />),
-
-  getItem('Quản lý', 'sub4', <img src={iconMenu3} alt="" />),
-  getItem('Quản lý', 'sub5', <img src={iconMenu4} alt="" />),
-  getItem('Doanh thu', 'sub6', <img src={iconMenu5} alt="" />),
-  getItem('Cài đặt', 'sub7', <img src={iconMenu6} alt="" />),
-  getItem('Hỗ trợ', 'sub8', <img src={iconMenu7} alt="" />),
+const items = [
+  {
+    label: 'Kho bản ghi',
+    link: 'record',
+    src: iconMenu1,
+  },
+  {
+    label: 'Playlist',
+    link: 'playlist',
+    src: iconMenu2,
+  },
+  {
+    label: 'Lập lịch phát',
+    link: 'player',
+    src: iconMenu3,
+  },
+  {
+    label: 'Quản lý',
+    link: 'manage',
+    src: iconMenu4,
+  },
+  {
+    label: 'Doanh thu',
+    link: 'turnover',
+    src: iconMenu5,
+  },
+  {
+    label: 'Cài đặt',
+    link: 'setting',
+    src: iconMenu6,
+  },
+  {
+    label: 'Hỗ trợ',
+    link: 'contact',
+    src: iconMenu7,
+  },
 ];
 
 const Navbar: React.FC = () => {
-  const onClick: MenuProps['onClick'] = e => {
-    console.log('click ', e);
-  };
-
   return (
     <div className="nav-bar">
       <div className="logo">
         <img src={imgLogo} width={96} alt="" />
       </div>
-      <Menu className="menu" onClick={onClick} mode="inline" items={items} />;
+      {/* <Menu className="menu" mode="inline" items={items} />; */}
+      <ul
+        className="ant-menu ant-menu-root ant-menu-inline ant-menu-light menu"
+        role="menu"
+        data-menu-list="true"
+      >
+        {items.map((e, index) => (
+          <li key={index} className="list-menu">
+            <>
+              <NavLink
+                to={`/${e.link}`}
+                className="ant-menu-item"
+                role="menuitem"
+                data-menu-id="rc-menu-uuid-44079-2-record"
+              >
+                <img src={e.src} alt={e.label} />
+                <span>{e.label}</span>
+              </NavLink>
+            </>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

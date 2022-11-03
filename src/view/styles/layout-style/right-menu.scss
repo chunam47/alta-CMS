@@ -2,19 +2,14 @@
   position: fixed;
   z-index: 1;
   right: 0px;
-  top: 21.5rem;
-  width: 4.1vw;
+  top: 18.5rem;
+  width: 110px;
   min-width: 6rem;
   border-radius: 8px 0px 0px 8px;
   transition: 0.5s;
-  background-color: $color-background-right-menu;
+  background-color: #2f2f41;
 
   &__menu__content {
-    max-height: 70vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    text-align: center;
-
     &::-webkit-scrollbar-track {
       box-shadow: none;
     }
@@ -25,36 +20,14 @@
     }
 
     .item__icon {
-      border-bottom: 1px solid $color-primary;
-      transition: 0.5s ease;
-      position: relative;
-      font-size: $font-size-icon;
-      margin: 0 auto;
-      width: 70%;
-      min-width: 3.2rem;
-      height: 6.4rem;
+      padding: 16px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
 
       &:last-child {
         border-bottom: none;
-      }
-
-      .icon-feather {
-        font-size: $font-size-icon;
-        width: $font-size-icon;
-        height: $font-size-icon;
-        color: $color-primary;
-
-        &.red-icon {
-          color: #ec3740;
-        }
-
-        &.green-icon {
-          color: #34cd26;
-        }
       }
 
       i {
@@ -68,8 +41,14 @@
         border-bottom: none;
       }
 
-      &:hover {
-        opacity: 0.4;
+      p {
+        font-size: 12px;
+        color: #fff;
+        line-height: 18px;
+        font-weight: 500;
+        text-align: center;
+        margin: 0;
+        margin-top: 10px;
       }
     }
 

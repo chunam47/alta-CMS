@@ -5,25 +5,19 @@
   font-size: $fs-2;
 }
 .search-bar {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-bottom: 1.6rem;
-  background-color: $color-white;
-  box-shadow: 0rem 0rem 0.4rem #e3e3e3;
-  margin-right: 2.4rem;
-  border-radius: 0.8rem;
-  height: 4.7rem;
+  width: 30%;
 
   .ant-input-affix-wrapper,
   input {
-    background: $color-white !important;
-    border: 1px solid $color-white;
-    box-sizing: border-box;
-    padding: 1.1rem 1.6rem;
-    font-size: 1.4rem;
-    width: 50rem;
-    outline: none;
-    border-radius: 0.8rem;
+    padding: 12px 24px;
+    background: #2b2b3f;
+    border-radius: 8px;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    color: #727288;
 
     .ant-input-prefix {
       svg {

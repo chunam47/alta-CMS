@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-import { useAltaIntl } from '@shared/hook/useTranslate';
 import { Button } from 'antd';
 
 import { imgLogo } from '../../../../shared/assets/images';
@@ -11,7 +10,6 @@ import NavLinkBottom from '../../components/NavLinkBottom';
 
 const TokenErrorStatus = () => {
   const history = useNavigate();
-  const { formatMessage } = useAltaIntl();
 
   return (
     <div className="auth-form">

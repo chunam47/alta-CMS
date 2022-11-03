@@ -22,17 +22,17 @@ $margin-top-body: 2.7rem;
 
     .identify {
       &__hi {
-        font-weight: $font-weight-medium;
-        font-size: $fs-0;
-        color: $color-header-text;
-        opacity: 0.5;
-        line-height: 1.8rem;
+        font-weight: 500;
+        font-size: 14px;
+        color: #b65100;
+        line-height: 17px;
       }
 
       &__place {
-        font-size: $fs-1;
-        color: $color-header-text;
-        line-height: 2.1rem;
+        font-size: 16px;
+        color: #f5f5ff;
+        line-height: 24px;
+        font-weight: 600;
       }
 
       &__admin {

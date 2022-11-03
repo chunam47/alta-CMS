@@ -78,7 +78,7 @@ const SelectAndLabelComponent: React.FC<ISelectAndLabel> = (props: ISelectAndLab
   return (
     <div className={`select-label-component ${className}`}>
       <div className="label-select">
-        {renderUILabel}
+        {renderUILabel}:
         <Select
           className={'select-custom ' + (props.classNameSelect || '')}
           value={value == null ? all : value}

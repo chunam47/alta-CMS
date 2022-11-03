@@ -3,11 +3,12 @@
 }
 
 .card-main-table {
-  background: $color-table-background;
+  background: rgba(47, 47, 65, 0.7);
   border-radius: 1.2rem;
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 24px 32px;
 
   .ant-badge-status-text {
     font-size: $fs-1;
@@ -69,30 +70,64 @@
 
   //table head
   .ant-table-thead > tr > th {
-    color: $color-white;
-    background: $color-table-head;
-    font-weight: $font-weight-medium;
+    background: transparent;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    letter-spacing: 0.002em;
+    color: #ffac69;
+    border: none;
+    padding: 0;
+    padding-bottom: 32px;
   }
 
   //padding for all table
-  .ant-table-tbody > tr > td,
-  .ant-table-thead > tr > th {
-    padding: 1.2rem 0.8rem;
+  .ant-table-tbody > tr > td {
+    padding: 12px 0 15px 0;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    align-items: center;
+    letter-spacing: 0.015em;
+    color: #ffffff;
+    border-bottom: 1px solid #727288;
+  }
+
+  .ant-table-tbody > tr:last-child > td {
+    border: 0;
+  }
+
+  .ant-table-tbody > tr > td:first-child {
+    // text-align: right;
+    // padding-right: 29px;
   }
 
   //for text color
   .ant-table {
-    color: $color-table-text;
-  }
-
-  //for even row background color
-  tr.ant-table-row:nth-child(even) {
-    background: $color-grey-light-1;
+    background: transparent;
   }
 
   // for border table
   .ant-table-container table > thead > tr:first-child th:first-child {
     border-top-left-radius: $border-radius;
+  }
+  .ant-table-tbody {
+    > tr.ant-table-row {
+      &:hover {
+        > td {
+          background: transparent;
+        }
+      }
+    }
+    > tr {
+      > td.ant-table-cell-row-hover {
+        background: transparent;
+      }
+    }
   }
 
   .ant-table-container table > thead > tr:first-child th:last-child {
@@ -100,7 +135,6 @@
   }
 
   .ant-table-tbody > tr.ant-table-row:last-child > td:first-child {
-    border-bottom-left-radius: $border-radius;
   }
 
   .ant-table-tbody > tr.ant-table-row:last-child > td:last-child {
@@ -120,14 +154,32 @@
   }
 
   li.ant-pagination-item {
-    color: $color-black;
+    background: transparent;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+    color: #f5f5ff;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   li.ant-pagination-item-active {
-    background: $color-white;
-    border-radius: 4px;
-    border: 1px solid $color-primary;
-    color: $color-black;
+    background: rgba(255, 117, 6, 0.5);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.015em;
+    color: #f5f5ff;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 99%;
   }
 
   .ant-pagination-disabled .ant-pagination-item-link {
@@ -137,20 +189,19 @@
 
   .ant-pagination-prev .ant-pagination-item-link,
   .ant-pagination-next .ant-pagination-item-link {
-    border-color: transparent;
-  }
-
-  .ant-pagination-next .ant-pagination-item-link {
-    background-color: $color-white;
-    color: $color-primary;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
   }
 
   .icon-edit {
-    color: $color-primary;
-    cursor: pointer;
-    width: 2.4rem;
-    height: 2.4rem;
-    font-size: $fs-5;
+    color: #ff7506;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: -0.002em;
+    text-decoration-line: underline;
+    color: #ff7506;
   }
 
   .ant-pagination-item {
@@ -190,7 +241,7 @@
 }
 
 .main-table:hover .ant-table-thead > tr > th {
-  background: #61c6e9;
+  background: transparent;
 }
 
 .ant-select:not(.ant-select-disabled):hover,

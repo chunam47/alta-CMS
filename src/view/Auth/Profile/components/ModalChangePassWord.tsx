@@ -45,7 +45,7 @@ const ModalChangePassWord = (props: IChangePassWord) => {
   return (
     <Modal
       footer={false}
-      title={formatMessage('accounts.change.password.title')}
+      title="Thay đổi mật khẩu"
       className="main-modal"
       visible={isModalVisible}
       destroyOnClose={true}
@@ -62,11 +62,23 @@ const ModalChangePassWord = (props: IChangePassWord) => {
         requiredMark={false}
       >
         <Form.Item
-          label={formatMessage('accounts.newPassword')}
+          label="Mật khẩu hiện tại:"
           name="password"
           rules={[
             {
-              required: true,
+              pattern:
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[ !@#$%^&*\(\)-_=+:";{}[\]\\\/<>.,~`]).{8,}$/g,
+              min: 8,
+            },
+          ]}
+        >
+          <Input.Password placeholder={formatMessage('accounts.newPassword')} />
+        </Form.Item>
+        <Form.Item
+          label="Mật khẩu mới:"
+          name="newPassword"
+          rules={[
+            {
               pattern:
                 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[ !@#$%^&*\(\)-_=+:";{}[\]\\\/<>.,~`]).{8,}$/g,
               min: 8,
@@ -77,13 +89,10 @@ const ModalChangePassWord = (props: IChangePassWord) => {
         </Form.Item>
 
         <Form.Item
-          label={formatMessage('accounts.confirm.newPassword')}
+          label="Nhập lại mật khẩu mới:"
           name="confirmPassword"
           dependencies={['password']}
           rules={[
-            {
-              required: true,
-            },
             ({ getFieldValue }) => ({
               validator(_, value) {
                 if (!value || getFieldValue('password') === value) {
@@ -105,7 +114,11 @@ const ModalChangePassWord = (props: IChangePassWord) => {
             >
               {formatMessage('common.cancel')}
             </Button>
-            <Button type="primary" className="normal-button button-modal" htmlType="submit">
+            <Button
+              type="primary"
+              className="normal-button button-modal save-button"
+              htmlType="submit"
+            >
               {formatMessage('common.save')}
             </Button>
           </Space>

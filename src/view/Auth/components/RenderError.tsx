@@ -1,4 +1,3 @@
-import { ExclamationCircleOutlined } from '@ant-design/icons';
 import React from 'react';
 import { IError } from '../interface';
 

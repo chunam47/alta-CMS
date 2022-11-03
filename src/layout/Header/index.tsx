@@ -29,7 +29,12 @@ const HeaderComponent = () => {
           <ChangeLanguage />
         </div>
         <div className="header-component__dropdown">
-          <div className="dropdown__profile__img">
+          <div
+            className="dropdown__profile__img"
+            onClick={() => {
+              navigate('/profile');
+            }}
+          >
             <img alt="img-avatar" className="img-avatar" src={profile?.avatar || imgAvatar} />
           </div>
         </div>
@@ -40,8 +45,8 @@ const HeaderComponent = () => {
           }}
         >
           <h4 className="identify__admin">{profile?.userFullName}</h4>
-          <p className="identify__place">{profile?.email || 'Unknown'}</p>
-          <p className="identify__hi">{(profile && profile?.role?.roleName) || 'Unknown'}</p>
+          <p className="identify__place">{profile?.email || 'Tuyết Nguyễn'}</p>
+          <p className="identify__hi">{(profile && profile?.role?.roleName) || 'Admin'}</p>
         </div>
       </div>
     </>

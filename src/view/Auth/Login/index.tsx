@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Button, Checkbox, Form, Input } from 'antd';
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
-import { useSingleAsync } from '@hook/useAsync';
+// import { useSingleAsync } from '@hook/useAsync';
 import { useAltaIntl } from '@hook/useTranslate';
-import authenticationPresenter from '@modules/authentication/presenter';
+// import authenticationPresenter from '@modules/authentication/presenter';
 
 import { imgLogo } from '@shared/assets/images';
 import Language from '../components/Language';
@@ -19,26 +19,15 @@ import './login.scss';
 const Login = () => {
   const navigate = useNavigate();
   const { formatMessage } = useAltaIntl();
-  const { login } = authenticationPresenter;
-  const loginByAccount = useSingleAsync(login);
+  // const { login } = authenticationPresenter;
+  // const loginByAccount = useSingleAsync(login);
   const [errorStatus, setErrorStatus] = useState('');
   const onFinishFailed = () => {
     setErrorStatus('');
   };
-  const onSubmitAccount = (values: any) => {
-    delete values.remember;
-    document.cookie = `remember_me=${true}; SameSite=None; Secure`;
-    loginByAccount
-      ?.execute(values)
-      ?.then(() => {
-        setErrorStatus('');
-        setTimeout(() => {
-          navigate('/');
-        }, 300);
-      })
-      .catch(() => {
-        setErrorStatus(formatMessage('login.account.error'));
-      });
+
+  const onSubmitAccount = () => {
+    navigate('/');
   };
 
   return (
@@ -74,7 +63,7 @@ const Login = () => {
               </Form.Item>
 
               <Button htmlType="submit" className="submit">
-                {formatMessage('login.button.account')}
+                Đăng nhập
               </Button>
             </Form>
           </div>
